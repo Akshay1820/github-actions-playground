@@ -13,4 +13,4 @@ jobs:
           echo "Hello Akshay"
           pwd
           ls -la
-          java -version
+          docker -v
