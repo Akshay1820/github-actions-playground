@@ -1,0 +1,13 @@
+name: My First GitHub Action
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Hello
+        run: echo "Hello Akshay"
