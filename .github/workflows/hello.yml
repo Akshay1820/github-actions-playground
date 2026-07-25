@@ -11,3 +11,6 @@ jobs:
     steps:
       - name: Print Hello
         run: echo "Hello Akshay"
+        pwd
+        ls -la
+        java -version
