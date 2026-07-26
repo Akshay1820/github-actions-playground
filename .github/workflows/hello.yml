@@ -11,19 +11,18 @@ jobs:
       - name: Downloading repo
         uses: actions/checkout@v4
 
-      - name: Exploring runner
+      - name: Java version before installing
         run: |
-          echo "Current Directory:"
-          pwd
-
-          echo "Files:"
-          ls -lah
-
-          echo "Current User:"
-          whoami
-
-          echo "Operating System:"
-          uname -a
-
           echo "Current Java Version:"
+          java -version
+
+      - name: Installing java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21' 
+
+      - name: Java version after installing
+        run: |
+          echo "Updated Java Version:"
           java -version
