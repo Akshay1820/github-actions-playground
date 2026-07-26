@@ -26,4 +26,4 @@ jobs:
           uname -a
 
           echo "Current Java Version:"
-          run java -version
+          java -version
