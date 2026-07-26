@@ -16,3 +16,9 @@ jobs:
       
       - name: Verify Class file
         run: find . -name "*.class"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-java-class
+          path: Deployment.class
