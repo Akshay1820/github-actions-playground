@@ -25,3 +25,5 @@ jobs:
           echo "Operating System:"
           uname -a
 
+          echo "Current Java Version:"
+          run java -version
