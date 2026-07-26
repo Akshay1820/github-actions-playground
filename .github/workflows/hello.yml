@@ -5,15 +5,23 @@ on:
     types: [opened]
 
 jobs:
-  say-hello:
+  explorer-runner:
     runs-on: ubuntu-latest
     steps:
       - name: Downloading repo
         uses: actions/checkout@v4
 
-      - name: Print Hello
+      - name: Exploring runner
         run: |
-          echo "Hello Akshay"
+          echo "Current Directory:"
           pwd
-          ls -la
-          docker -v
+
+          echo "Files:"
+          ls -lah
+
+          echo "Current User:"
+          whoami
+
+          echo "Operating System:"
+          uname -a
+
