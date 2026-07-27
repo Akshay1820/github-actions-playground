@@ -1,24 +1,22 @@
-name: My First GitHub Action
+name: Environment variable demo
 
 on:
-  pull_request:
-    types: [opened]
+  workflow_dispatch
+
+env:
+  APP_NAME: GitHub Actions Playground
+  JAVA_VERSION: 21
+
 
 jobs:
-  explorer-runner:
+  env-demo:
     runs-on: ubuntu-latest
     steps:
       - name: Downloading repo
         uses: actions/checkout@v4
 
-      - name: Compile Java Class
-        run: javac Deployment.java
-      
-      - name: Verify Class file
-        run: find . -name "*.class"
+      - name: Printing environment variables
+        run: | 
+          echo "Application: $APP_NAME"
+          echo "Java version: $JAVA_VERSION"
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: compiled-java-class
-          path: Deployment.class
